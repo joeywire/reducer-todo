@@ -16,16 +16,16 @@ function App() {
     dispatch({ type: "ADD_TASK", payload: text });
     setText("")
   }
+
+  const clearComplete = e => {
+    e.preventDefault();
+    dispatch({type: "CLEAR_TASKS"})
+  }
   
   return (
     <div>
       <h1>To-Do App</h1>
-      <form 
-        onSubmit={onSubmit}
-      >
-        <input value={text} onChange={e => setText(e.target.value)}/>
-      </form>
-      <button>Submit!</button>
+
       {state.tasks.map((item, idx) => (
         <div
           key={item.id}
@@ -37,6 +37,15 @@ function App() {
           {item.task}  
         </div>
       ))}
+
+      <form onSubmit={onSubmit}>
+        <input value={text} onChange={e => setText(e.target.value)}/>
+      </form>
+
+      <button onClick={onSubmit}>Submit!</button>
+
+      <button onClick={clearComplete}>Clear</button>
+
     </div>
     
   )

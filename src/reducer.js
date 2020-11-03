@@ -22,7 +22,9 @@ const reducer = (state, action) => {
                 if (item.id === action.payload) {
                     return {...item, completed: !item.completed};
                 } return item;
-            })}
+            })};
+        case 'CLEAR_TASKS':
+            return {tasks: state.tasks.filter((item => item.completed === false))};
         default: 
             return state;
     }
