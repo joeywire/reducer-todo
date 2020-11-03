@@ -28,6 +28,13 @@
   color: #61dafb;
 }
 
+.tasklist-wrapper {
+  width: 30rem;
+  border: 4px dashed darkslateblue;
+  margin: 0 auto 1rem;
+  padding-bottom: 2rem;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
@@ -35,4 +42,9 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+body {
+  width: 95%;
+  margin: 0 auto;
 }
